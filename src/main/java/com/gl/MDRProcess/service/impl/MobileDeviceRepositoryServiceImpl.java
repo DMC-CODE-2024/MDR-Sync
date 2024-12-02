@@ -70,6 +70,9 @@ public class MobileDeviceRepositoryServiceImpl {
 	
 	@Autowired
 	AlertRepository alertRepository;
+
+	@Autowired
+	AlertService alertService;
 	
 	@Autowired
 	@PersistenceContext//(unitName = "appEntityManagerFactory")
@@ -361,7 +364,9 @@ public class MobileDeviceRepositoryServiceImpl {
 	}
 	
 	public void raiseAnAlert(String alertCode, String alertMessage, String alertProcess, int userId) {
-		Process p = null;
+
+		alertService.raiseAnAlert(null, alertCode, alertMessage, alertProcess, userId);
+		/*Process p = null;
 		String path = null;
 		String line = null;
         String response = null;
@@ -378,6 +383,6 @@ public class MobileDeviceRepositoryServiceImpl {
             logger.info("Alert is generated :response " + response);
         } catch (Exception ex) {
             logger.error("Not able to execute Alert mgnt jar ", ex.getLocalizedMessage() + " ::: " + ex.getMessage());
-        }
+        }*/
     }
 }

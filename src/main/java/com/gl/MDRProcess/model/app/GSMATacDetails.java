@@ -16,7 +16,7 @@ import org.hibernate.annotations.UpdateTimestamp;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 //@Entity
-//@Table(name = "gsma_tac_details")
+//@Table(name = "gsma_tac_detail")
 public class GSMATacDetails {
 //	@Id
 //	@GeneratedValue(strategy = GenerationType.IDENTITY)
